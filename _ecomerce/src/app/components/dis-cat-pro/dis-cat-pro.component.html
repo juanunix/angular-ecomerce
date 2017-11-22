@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <table class="table table-hover table-responsive">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Categories</th>
+            <th>Products Name</th>
+            <th>Products Price</th>
+            <th>Products Quantity</th>
+            <th>Products Image URL</th>
+            <th colspan="2">Products Info</th>
+            <th>Edit</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of productandcats; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.category? item.category : item.selectcategory}}</td>
+            <td>{{item.product}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.image}}</td>
+            <td colspan="2">{{item.info}}</td>
+            <td>
+              <button type="button" class="close" aria-label="Close">
+                <span class="px-1 text-black" aria-hidden="true">&times;</span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
