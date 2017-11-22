@@ -55,6 +55,8 @@ nav{
 
 .navbar-brand >h1{
   color: white;
+  cursor: pointer;
+  
 }
 /* 
 .navbar-brand>h1:hover {
@@ -219,7 +221,7 @@ nav{
 }
 
 #most-sold-products .most-sold-products-item .most-sold-products-link .most-sold-products-hover .most-sold-products-hover-content i {
-  margin-top: -12px
+  margin-top: -9px
 }
 
 #most-sold-products .most-sold-products-item .most-sold-products-link .most-sold-products-hover .most-sold-products-hover-content h3,

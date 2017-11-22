@@ -1,6 +1,101 @@
+<div class="gif-container">
+  <img id='gif' src="../../../assets/eclipse.gif" alt="eclipse">
+</div>
+<nav class="top-nav d-flex justify-content-between px-2">
+  <ul id="top-nav-ul-1">
+    <li>
+      <a href="#">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        email@email.com</a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+        +1-202-468-1012</a>
+    </li>
+  </ul>
+  <ul id="top-nav-ul-2">
+
+    <li>
+      <a [routerLink]="['/account']">Account</a>
+    </li>
+    <li>
+      <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+    </li>
+    <li>
+      <a href="#" data-toggle="modal" data-target="#register-modal">Sign up</a>
+    </li>
+  </ul>
+</nav>
+
+<nav class="navbar navbar-toggleable-sm navbar-light bg-faded p-3">
+  <button class="navbar-toggler navbar-toggler-right mt-2" id="menu-bar" type="button" data-toggle="collapse" data-target="#navbar-content"
+    aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <a class="navbar-brand">
+    <h1 [routerLink]="['/home']"> iShop</h1>
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbar-content">
+    <ul class="navbar-nav my-2 mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Men
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Sunglasses</a>
+          <a class="dropdown-item" href="#">Hats</a>
+          <a class="dropdown-item" href="#">Clothings</a>
+          <a class="dropdown-item" href="#">Watches</a>
+
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Women
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Sunglasses</a>
+          <a class="dropdown-item" href="#">Hats</a>
+          <a class="dropdown-item" href="#">Clothings</a>
+          <a class="dropdown-item" href="#">Watches</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Category
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Fashion</a>
+          <a class="dropdown-item" href="#">Clothings</a>
+          <a class="dropdown-item" href="#">Electronics</a>
+        </div>
+      </li>
+
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-0" type="text" placeholder="Search...">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+        <i class="fa fa-search text-primary" aria-hidden="true"></i>
+      </button>
+    </form>
+
+    <a class="nav-link my-2" href="#">
+      <i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i>
+      <span class="badge badge-danger badge-pill">1</span>
+    </a>
+
+  </div>
+</nav>
+
 <div class="container">
   <div class="row align-items-center pt-4">
-    <div *ngIf="pro?.image !== null"  class="col-md-5">
+    <div *ngIf="pro?.image !== null" class="col-md-5">
       <img [src]='pro?.image' alt="">
     </div>
     <div class="col-md-7">
@@ -14,6 +109,7 @@
         {{pro?.info}}
       </p>
       <button type="sumbit" class="btn btn-danger">Add to Cart</button>
+      <button type="sumbit" class="btn btn-danger">Checkout</button>      
     </div>
   </div>
 </div>

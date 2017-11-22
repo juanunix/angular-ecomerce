@@ -1,9 +1,11 @@
-<section id="third-card">
-  <h2 class="mt-0 pt-5 pb-2 text-center text-primary">Hot deals</h2>
+<!--================================================================================================================================-->
+<section id="first-card">
+  <h2 class="mt-0 pt-5 pb-2 text-center text-primary">Hot Deals</h2>
   <div class="container">
     <div class="row">
+
       <div class="col-lg-3 col-md-3 col-sm-4 col-6 mt-4 mb-4" *ngFor="let item of productandcats">
-        <div [routerLink]="['/home', 'checkout']" class="card h-100">
+        <div [routerLink]="['/home', item._id]" class="card h-100">
           <a>
             <img class="card-img-top" [src]="item.image" alt="">
           </a>
