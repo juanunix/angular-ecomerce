@@ -1,11 +1,11 @@
 /*the navbar at the top */
 
-
 .top-nav {
-  background-color: rgb(63, 127, 191);
+  background-color: rgb(51, 123, 196);
   font-size: 15px;
 }
-nav{
+
+nav {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -30,7 +30,7 @@ nav{
 }
 
 .navbar {
-  background-color: #2667a8;
+  background-color: #2363a3;
 }
 
 #menu-bar {
@@ -53,11 +53,12 @@ nav{
   color: #dae8ef;
 }
 
-.navbar-brand >h1{
+.navbar-brand>h1 {
   color: white;
   cursor: pointer;
-  
 }
+
+
 /* 
 .navbar-brand>h1:hover {
   color: #dae8ef;
@@ -372,6 +373,7 @@ footer ul li a {
   text-decoration: none;
 }
 
+
 /*--------------------------------------------------------*/
 
 
@@ -402,4 +404,14 @@ footer ul li a {
 .account p a {
   text-decoration: none;
   color: white;
+}
+
+
+/* --------------------------------manual classes---------------------------- */
+
+.fixed {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top:0;
 }

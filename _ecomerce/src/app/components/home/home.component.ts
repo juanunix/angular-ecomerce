@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
@@ -7,6 +7,7 @@ declare var $: any;
 function matchingPasswords(c: AbstractControl) {
   return (c.get('password').value === c.get('password1').value) ? null : { 'nomatch': true };
 }
+
 
 @Component({
   selector: 'app-home',
@@ -18,15 +19,23 @@ function matchingPasswords(c: AbstractControl) {
 
 
 export class HomeComponent implements OnInit {
-   form: FormGroup;
-   loginform: FormGroup;
-   browserUser;
+  form: FormGroup;
+  loginform: FormGroup;
+  browserUser;
 
   constructor(private fb: FormBuilder, private router: Router, private us: UsersService) {
     this.loginForm();
     this.createUsersForm();
   }
-   loginForm() {
+  ngOnInit() {
+    this.fixTheNavBar();
+
+  }
+
+
+
+
+  loginForm() {
     this.loginform = this.fb.group({
 
       email: ['', Validators.compose([Validators.required])],
@@ -35,7 +44,27 @@ export class HomeComponent implements OnInit {
     });
   }
 
-   createUsersForm() {
+  fixTheNavBar() {
+
+    const nav2 = document.querySelector('#fixed');
+    const nav = document.querySelector('nav');
+
+    $(window).scroll(() => {
+      const distance = $(nav).height() + $(nav2).height() + 30;
+      const docHeight = $(document).scrollTop();
+      if (docHeight > distance) {
+        $('#fixed').addClass('fixed');
+      } else {
+        $('#fixed').removeClass('fixed');
+      }
+
+    });
+
+
+
+  }
+
+  createUsersForm() {
     this.form = this.fb.group({
       fullname: ['', Validators.required],
       username: ['', Validators.compose([
@@ -61,7 +90,7 @@ export class HomeComponent implements OnInit {
     }, { Validator: matchingPasswords });
   }
 
-   validateUsername(controls) {
+  validateUsername(controls) {
     const usernameFormate = new RegExp(/^[a-zA-Z0-9]+$/);
     if (usernameFormate.test(controls.value)) {
       return null;
@@ -72,7 +101,7 @@ export class HomeComponent implements OnInit {
       return { 'validateUsername': true };
     }
   }
-   validateEmail(controls) {
+  validateEmail(controls) {
     // tslint:disable-next-line:max-line-length
     const emailFormate = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     if (emailFormate.test(controls.value)) {
@@ -81,7 +110,7 @@ export class HomeComponent implements OnInit {
       return { 'validateEmail': true };
     }
   }
-   validatePassword(controls) {
+  validatePassword(controls) {
     const passwordFormate = new RegExp(/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])(?=.*?[\W]).{8,20}$/);
     if (passwordFormate.test(controls.value)) {
       return null;
@@ -91,7 +120,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-   onRegister() {
+  onRegister() {
     const user = {
       fullname: this.form.get('fullname').value,
       email: this.form.get('email').value,
@@ -106,7 +135,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-   onLogin() {
+  onLogin() {
     const user = {
       email: this.loginform.get('email').value,
       password: this.loginform.get('password').value
@@ -128,9 +157,6 @@ export class HomeComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-
-  }
 
 
 

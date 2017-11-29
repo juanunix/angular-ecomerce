@@ -21,12 +21,16 @@ import { DisCatProComponent } from './components/dis-cat-pro/dis-cat-pro.compone
 import { AddressComponent } from './components/address/address.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CartComponent } from './components/cart/cart.component';
+
 
 // providers
+
 import { UsersService } from './services/users.service';
 import { CategoryAndProductsService } from './services/category-and-products.service';
 import { AddressService } from './services/address.service';
 import { PaymentService } from './services/payment.service';
+import { CartService } from './services/cart.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +47,7 @@ import { PaymentService } from './services/payment.service';
     AddressComponent,
     PaymentComponent,
     CheckoutComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,7 @@ import { PaymentService } from './services/payment.service';
     HttpModule
 
   ],
-  providers: [UsersService, CategoryAndProductsService, AddressService, PaymentService],
+  providers: [UsersService, CategoryAndProductsService, AddressService, PaymentService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

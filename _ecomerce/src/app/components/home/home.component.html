@@ -14,12 +14,12 @@
   <nav class="top-nav d-flex justify-content-between px-2">
     <ul id="top-nav-ul-1">
       <li>
-        <a href="#">
+        <a>
           <i class="fa fa-envelope-o" aria-hidden="true"></i>
           email@email.com</a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
           +1-202-468-1012</a>
       </li>
@@ -30,62 +30,58 @@
         <a [routerLink]="['/account']">Account</a>
       </li>
       <li>
-        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+        <a data-toggle="modal" data-target="#login-modal">Login</a>
       </li>
       <li>
-        <a href="#" data-toggle="modal" data-target="#register-modal">Sign up</a>
+        <a data-toggle="modal" data-target="#register-modal">Sign up</a>
       </li>
     </ul>
   </nav>
 
-  <nav class="navbar navbar-toggleable-sm navbar-light bg-faded p-3">
+  <nav id='fixed' class="navbar navbar-toggleable-sm navbar-light bg-faded p-3">
     <button class="navbar-toggler navbar-toggler-right mt-2" id="menu-bar" type="button" data-toggle="collapse" data-target="#navbar-content"
       aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <a class="navbar-brand">
-      <h1 class="">iShop</h1>
+      <h1 [routerLink]="['/home']" class="">iShop</h1>
     </a>
 
     <div class="collapse navbar-collapse" id="navbar-content">
       <ul class="navbar-nav my-2 mr-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Men
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Sunglasses</a>
-            <a class="dropdown-item" href="#">Hats</a>
-            <a class="dropdown-item" href="#">Clothings</a>
-            <a class="dropdown-item" href="#">Watches</a>
+            
+            cool
 
           </div>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Women
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Sunglasses</a>
-            <a class="dropdown-item" href="#">Hats</a>
-            <a class="dropdown-item" href="#">Clothings</a>
-            <a class="dropdown-item" href="#">Watches</a>
+              <a class="dropdown-item">Sunglasses</a>
+              <a class="dropdown-item">Hats</a>
+              <a class="dropdown-item">Clothings</a>
+              <a class="dropdown-item">Watches</a>
           </div>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Category
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Fashion</a>
-            <a class="dropdown-item" href="#">Clothings</a>
-            <a class="dropdown-item" href="#">Electronics</a>
+              <a class="dropdown-item">Sunglasses</a>
+              <a class="dropdown-item">Hats</a>
+              <a class="dropdown-item">Clothings</a>
+              <a class="dropdown-item">Watches</a>
           </div>
         </li>
 
@@ -98,9 +94,11 @@
         </button>
       </form>
 
-      <a class="nav-link my-2" href="#">
+      <a class="nav-link my-2" [routerLink]="['/home/cart/items']">
+
         <i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i>
         <span class="badge badge-danger badge-pill">1</span>
+
       </a>
 
     </div>
@@ -218,8 +216,7 @@
         </div>
         <div class="col-lg-4 col-sm-6 p-0">
           <a class="adds-box" href="https://hips.hearstapps.com/cos.h-cdn.co/assets/15/04/nrm_1422051784-ruined-clothes.jpg">
-            <img class="img-fluid" src="https://hips.hearstapps.com/cos.h-cdn.co/assets/15/04/nrm_1422051784-ruined-clothes.jpg"
-              alt="">
+            <img class="img-fluid" src="https://hips.hearstapps.com/cos.h-cdn.co/assets/15/04/nrm_1422051784-ruined-clothes.jpg" alt="">
             <div class="adds-box-caption">
               <div class="adds-box-caption-content">
                 <div class="project-category text-faded">
@@ -281,9 +278,10 @@
                 <h6>This is one of our most popular hat in stock which sold over 300,000</h6>
               </div>
             </div>
-            <img class="img-fluid" src="https://content.beaverbrooks.co.uk/static/images/category/watches/landing/redesign/omega-watches.jpg" alt="">
+            <img class="img-fluid" src="https://content.beaverbrooks.co.uk/static/images/category/watches/landing/redesign/omega-watches.jpg"
+              alt="">
           </a>
-         
+
         </div>
         <div class="col-md-4 col-sm-6 most-sold-products-item">
           <a class="most-sold-products-link" data-toggle="modal" href="#portfolioModal3">
@@ -292,9 +290,10 @@
                 <h6>This is one of our most popular phone in stock which sold over 10,000</h6>
               </div>
             </div>
-            <img class="img-fluid" src="https://content.beaverbrooks.co.uk/static/images/category/watches/landing/redesign/omega-watches.jpg" alt="">
+            <img class="img-fluid" src="https://content.beaverbrooks.co.uk/static/images/category/watches/landing/redesign/omega-watches.jpg"
+              alt="">
           </a>
-         
+
         </div>
       </div>
     </div>
@@ -302,7 +301,7 @@
 
   <!--================================================================================================================================-->
 
-<app-hot-deals></app-hot-deals>
+  <app-hot-deals></app-hot-deals>
 
   <!--================================================================================================================================-->
 

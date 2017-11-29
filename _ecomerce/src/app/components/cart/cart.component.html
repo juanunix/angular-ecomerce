@@ -1,6 +1,3 @@
-<div class="gif-container">
-  <img id='gif' src="../../../assets/eclipse.gif" alt="eclipse">
-</div>
 <nav class="top-nav d-flex justify-content-between px-2">
   <ul id="top-nav-ul-1">
     <li>
@@ -34,8 +31,8 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <a class="navbar-brand">
-    <h1 [routerLink]="['/home']"> iShop</h1>
+  <a [routerLink]="['/home']" class="navbar-brand">
+    <h1 class="">iShop</h1>
   </a>
 
   <div class="collapse navbar-collapse" id="navbar-content">
@@ -55,8 +52,7 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          WomeniShop
-
+          Women
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Sunglasses</a>
@@ -86,31 +82,85 @@
       </button>
     </form>
 
-    <a routerLink="/home/cart/items" class="nav-link my-2">
+    <a class="nav-link my-2" href="#">
       <i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i>
-      <span class="badge badge-danger badge-pill">{{count}}</span>
+      <span class="badge badge-danger badge-pill">1</span>
     </a>
-    
+
   </div>
 </nav>
 
-<div class="container">
-  <div class="row align-items-center pt-4">
-    <div *ngIf="pro?.image !== null" class="col-md-5">
-      <img [src]='pro?.image' alt="">
+<section>
+  <div class="container">
+
+    <div class="row pt-5 pb-0">
+
+      <div class="col-6">
+        <h3>items</h3>
+      </div>
+      <div class="col-2">
+        <p class="text-muted">
+          Price
+        </p>
+      </div>
+      <div class="col-2">
+        <p class="text-muted">
+          Quantity
+        </p>
+      </div>
+      <div class="col-2">
+
+      </div>
     </div>
-    <div class="col-md-7">
-      <h3>{{pro?.product}}</h3>
-      <h6 class="text-danger">{{pro?.price | currency:'USD':true:'1.2-2'}}
-        <del>$40.00</del>
-        <br> 20% OFF</h6>
-      <p>{{pro?.shipping}}</p>
-      <h5>Description of item</h5>
-      <p class="text-muted">
-        {{pro?.info}}
-      </p>
-      <button (click)='addToCart(pro?.image, pro?.price, pro?.info, pro?.product)' type="sumbit" class="btn btn-danger">Add to Cart</button>
-      <button type="sumbit" class="btn btn-danger">Checkout</button>
+
+
+    <hr>
+
+    <!-- ..................................... -->
+    <div class="row pt-5 pb-0" *ngFor="let item of cart">
+
+      <div class="col-6 second-row-img">
+        <div class="d-flex">
+          <img class="d-block img-fluid" [src]="item?.image" alt="">
+          <div>
+            <h5>{{item?.product}}</h5>
+            <p style="font-size:13px;">{{item?.info}}</p>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-2">
+        <h6 class="text-danger text-muted">{{item?.price | currency:'USD':true:'1.2-2'}}</h6>
+
+      </div>
+      <div class="col-2">
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+
+          </select>
+
+      </div>
+      <div class="col-2"></div>
+
+
     </div>
+
+    <!-- ........................................ -->
+
+    <div class="d-flex justify-content-center">
+      <button type="sumbit" class="btn btn-danger mt-5">Checkout</button>
+
+    </div>
+
+
   </div>
-</div>
+</section>
