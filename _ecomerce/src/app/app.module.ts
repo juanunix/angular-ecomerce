@@ -31,6 +31,8 @@ import { CategoryAndProductsService } from './services/category-and-products.ser
 import { AddressService } from './services/address.service';
 import { PaymentService } from './services/payment.service';
 import { CartService } from './services/cart.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +50,8 @@ import { CartService } from './services/cart.service';
     PaymentComponent,
     CheckoutComponent,
     CartComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,9 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CartService {
-  sendCart;
+  sendCart: object;
+  count: number;
+
   constructor(private http: Http) {
 
   }
@@ -14,6 +16,12 @@ export class CartService {
   }
   public getCart() {
     return this.sendCart;
+  }
+  public saveCartNumber(count: number): void {
+    this.count = count;
+  }
+  public getCartNumber() {
+    return this.count;
   }
 
 }
