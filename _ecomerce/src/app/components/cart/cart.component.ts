@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -8,11 +8,19 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartComponent implements OnInit {
   cart: Array<any> = [];
+  count;
+
   constructor(private cs: CartService) { }
 
   ngOnInit() {
     this.getCartObjects();
+    this.getCartNumber();
 
+  }
+
+  getCartNumber() {
+    // this.cs.getCartNumber();
+    this.count = this.cs.getCartNumber();
   }
 
   getCartObjects() {

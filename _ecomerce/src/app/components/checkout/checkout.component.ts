@@ -14,12 +14,13 @@ declare var $: any;
 export class CheckoutComponent implements OnInit {
   pro: any;
   count = 0;
+
   constructor(private route: ActivatedRoute, private cs: CartService, private router: Router, private cps: CategoryAndProductsService) {
     this.getEachProducts();
-
   }
 
   ngOnInit() {
+
   }
 
   addToCart(image, price, info, product) {
@@ -27,6 +28,10 @@ export class CheckoutComponent implements OnInit {
     this.count++;
     const cartObject = { image: image, price: price, info: info, product: product };
     this.cs.saveCart(cartObject);
+    // console.log(this.count);
+    this.cs.saveCartNumber(this.count);
+
+
 
   }
 

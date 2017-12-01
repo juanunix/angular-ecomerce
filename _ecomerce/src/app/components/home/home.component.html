@@ -11,98 +11,8 @@
 </head>
 
 <body>
-  <nav class="top-nav d-flex justify-content-between px-2">
-    <ul id="top-nav-ul-1">
-      <li>
-        <a>
-          <i class="fa fa-envelope-o" aria-hidden="true"></i>
-          email@email.com</a>
-      </li>
-      <li>
-        <a>
-          <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
-          +1-202-468-1012</a>
-      </li>
-    </ul>
-    <ul id="top-nav-ul-2">
-
-      <li>
-        <a [routerLink]="['/account']">Account</a>
-      </li>
-      <li>
-        <a data-toggle="modal" data-target="#login-modal">Login</a>
-      </li>
-      <li>
-        <a data-toggle="modal" data-target="#register-modal">Sign up</a>
-      </li>
-    </ul>
-  </nav>
-
-  <nav id='fixed' class="navbar navbar-toggleable-sm navbar-light bg-faded p-3">
-    <button class="navbar-toggler navbar-toggler-right mt-2" id="menu-bar" type="button" data-toggle="collapse" data-target="#navbar-content"
-      aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <a class="navbar-brand">
-      <h1 [routerLink]="['/home']" class="">iShop</h1>
-    </a>
-
-    <div class="collapse navbar-collapse" id="navbar-content">
-      <ul class="navbar-nav my-2 mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Men
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            
-            cool
-
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Women
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item">Sunglasses</a>
-              <a class="dropdown-item">Hats</a>
-              <a class="dropdown-item">Clothings</a>
-              <a class="dropdown-item">Watches</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Category
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item">Sunglasses</a>
-              <a class="dropdown-item">Hats</a>
-              <a class="dropdown-item">Clothings</a>
-              <a class="dropdown-item">Watches</a>
-          </div>
-        </li>
-
-      </ul>
-
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-0" type="text" placeholder="Search...">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-          <i class="fa fa-search text-primary" aria-hidden="true"></i>
-        </button>
-      </form>
-
-      <a class="nav-link my-2" [routerLink]="['/home/cart/items']">
-
-        <i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i>
-        <span class="badge badge-danger badge-pill">1</span>
-
-      </a>
-
-    </div>
-  </nav>
+  <!-- =======================================nav bar======================================= -->
+  <app-navbar [input]='count'></app-navbar>
 
   <!--carousel carousel carousel carousel carousel carousel -->
 
@@ -153,7 +63,7 @@
 
 
 
-  <!--================================================================================================================================-->
+  <!--==================================================================new deal==============================================================-->
   <app-new></app-new>
 
   <!--================================================================================================================================-->
@@ -241,209 +151,16 @@
           </a>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!--======================================================================popular products==========================================================-->
-
-
+  <!--====================================================================== popular products ==========================================================-->
   <app-popular></app-popular>
-  <!--================================================================================================================================-->
-
-  <section class="bg-light" id="most-sold-products">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h3 class="section-heading p-2 text-primary">Most sold products</h3>
-        </div>
-      </div>
-      <div class="row">
-
-        <div class="col-md-4 col-sm-6 most-sold-products-item">
-          <a class="most-sold-products-link" data-toggle="modal" href="#portfolioModal2">
-            <div class="most-sold-products-hover">
-              <div class="most-sold-products-hover-content">
-                <h6>This is one of our most popular watch in stock which sold over 100,000</h6>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://content.beaverbrooks.co.uk/static/images/category/watches/landing/redesign/omega-watches.jpg"
-              alt="">
-          </a>
-        </div>
-
-        <div class="col-md-4 col-sm-6 most-sold-products-item">
-          <a class="most-sold-products-link" data-toggle="modal" href="#portfolioModal2">
-            <div class="most-sold-products-hover">
-              <div class="most-sold-products-hover-content">
-                <h6>This is one of our most popular hat in stock which sold over 300,000</h6>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://content.beaverbrooks.co.uk/static/images/category/watches/landing/redesign/omega-watches.jpg"
-              alt="">
-          </a>
-
-        </div>
-        <div class="col-md-4 col-sm-6 most-sold-products-item">
-          <a class="most-sold-products-link" data-toggle="modal" href="#portfolioModal3">
-            <div class="most-sold-products-hover">
-              <div class="most-sold-products-hover-content">
-                <h6>This is one of our most popular phone in stock which sold over 10,000</h6>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://content.beaverbrooks.co.uk/static/images/category/watches/landing/redesign/omega-watches.jpg"
-              alt="">
-          </a>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--================================================================================================================================-->
-
+  <!--================================================== hot deals ==============================================================================-->
   <app-hot-deals></app-hot-deals>
-
-  <!--================================================================================================================================-->
-
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <h2 id="ishop" class="text-cemter">iShop</h2>
-        </div>
-        <div class="col-sm-2">
-          <h5>iShop</h5>
-          <ul>
-            <li>
-              <a href="#">Account</a>
-            </li>
-            <li>
-              <a href="#">Sign in</a>
-            </li>
-            <li>
-              <a href="#">Sign up</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-2">
-          <h5>About us</h5>
-          <ul>
-            <li>
-              <a href="#">iShop info</a>
-            </li>
-            <li>
-              <a href="#">Contact us</a>
-            </li>
-            <li>
-              <a href="#">Reviews</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-2">
-          <h5>Support</h5>
-          <ul>
-            <li>
-              <a href="#">FAQ</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a href="#">Forums</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-3">
-          <h5>Contact</h5>
-          <div class="social-networks">
-            <ul>
-              <li>
-                <a href="#" class="google">Phone</a>
-              </li>
-              <li>
-                <a href="#" class="google">Email</a>
-              </li>
-            </ul>
-            <a href="#" class="twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-            <a href="#" class="facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright text-center">
-      <p>&copy; iShop 2017 Copyright </p>
-    </div>
-  </footer>
-
-
-  <!--===================================Modals================================================-->
-
-  <!-- Login Modal -->
-  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="cancel">
-          <a href=""></a>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span class="px-1 text-white" aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="container">
-            <form [formGroup]="loginform" (submit)="onLogin()">
-              <div class="d-flex justify-content-center text-white flex-column text-center p-2 account">
-                <h3>Login</h3>
-                <input formControlName="email" class="m-1 py-2" type="email" name="" value="" placeholder="Email">
-                <input formControlName="password" class="m-1 py-2" type="password" name="" value="" placeholder="Password">
-                <button type="submit" class="m-1 p-2">Login
-                  <i class="fa fa-signin"></i>
-                </button>
-                <p>
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--register modal-->
-  <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="cancel">
-          <a href=""></a>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span class="px-1 text-white" aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="container">
-            <form [formGroup]="form" (submit)="onRegister()">
-              <div class="d-flex justify-content-center text-white flex-column text-center p-2 account">
-                <h3>Register</h3>
-                <input formControlName="fullname" class="m-1 py-2" type="text" name="" value="" placeholder="Full name">
-                <input formControlName="username" class="m-1 py-2" type="text" name="" value="" placeholder="Username">
-                <input formControlName="phone" class="m-1 py-2" type="tel" name="" value="" placeholder="Phone">
-                <input formControlName="email" class="m-1 py-2" type="email" name="" value="" placeholder="Email">
-                <input formControlName="password" class="m-1 py-2" type="password" name="" value="" placeholder="Password">
-                <input formControlName="verify" class="m-1 py-2" type="password" name="" value="" placeholder="Verify password">
-                <button type="submit" class="m-1 p-2">Register
-                  <i class="fa fa-signin"></i>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!--================================================= footer ===============================================================================-->
+  <app-footer></app-footer>
 </body>
 
 </html>

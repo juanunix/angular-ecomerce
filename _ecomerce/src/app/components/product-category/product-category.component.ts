@@ -20,13 +20,10 @@ export class ProductCategoryComponent implements OnInit {
     this.createProductandCategoryForm();
   }
 
-
-
   ngOnInit() {
     this.clearingUpTheSelectCategoryOption();
   }
   clearingUpTheSelectCategoryOption(): void {
-    this.categories = this.categoryandproducts.getCategoryandProducts1();
     this.categories.forEach(element => {
       if (element.category === null) {
         const index = this.categories.indexOf(element);
